@@ -3,6 +3,7 @@
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\AdminDashboard;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\TempImageController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Request;
@@ -39,9 +40,9 @@ Route::group(["prefix"=>"admin"],function(){
         Route::get("/category/delete/{id}",[CategoryController::class,"delete"])->name("admin.category.delete");
 
 
-        Route::get("/sub-categories",[CategoryController::class,"index"])->name("admin.sub-categories");
-        Route::get("/sub-category/add",[CategoryController::class,"add"])->name("admin.sub-category.add");
-        Route::post("/sub-category/create",[CategoryController::class,"create"])->name("admin.sub-category.create");
+        Route::get("/sub-categories",[SubCategoryController::class,"index"])->name("admin.sub-categories");
+        Route::get("/sub-category/add",[SubCategoryController::class,"add"])->name("admin.sub-category.add");
+        Route::post("/sub-category/create",[SubCategoryController::class,"create"])->name("admin.sub-category.create");
 
 
         Route::get("/logout",[adminController::class,"login"])->name("admin.logout");
